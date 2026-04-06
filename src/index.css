@@ -1,12 +1,129 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* PrimeReact InputText full width fix */
-.p-inputtext {
-  width: 100%;
+/* ─── Ocean Theme (light) ───────────────────────────────────────── */
+:root,
+[data-theme="ocean"] {
+  --brand-primary:     #0077b6;
+  --brand-secondary:   #00b4d8;
+  --brand-accent:      #f77f00;
+  --navbar-from:       #0077b6;
+  --navbar-to:         #023e8a;
+  --hero-from:         #e0f7fa;
+  --hero-to:           #dbeafe;
+  --card-shadow:       0 4px 24px rgba(0, 119, 182, 0.13);
+  --stat-gradient:     linear-gradient(135deg, #0077b6, #00b4d8);
+  --tag-bg:            #e0f2fe;
+  --tag-color:         #0369a1;
+  --toggle-bg:         rgba(255,255,255,0.18);
+}
+
+/* ─── Midnight Theme (dark) ─────────────────────────────────────── */
+[data-theme="midnight"] {
+  --brand-primary:     #7c3aed;
+  --brand-secondary:   #a78bfa;
+  --brand-accent:      #f43f5e;
+  --navbar-from:       #1a0533;
+  --navbar-to:         #2d1b69;
+  --hero-from:         #0d0d1a;
+  --hero-to:           #1a0533;
+  --card-shadow:       0 4px 24px rgba(124, 58, 237, 0.25);
+  --stat-gradient:     linear-gradient(135deg, #7c3aed, #a78bfa);
+  --tag-bg:            rgba(124, 58, 237, 0.2);
+  --tag-color:         #c4b5fd;
+  --toggle-bg:         rgba(255,255,255,0.12);
+}
+
+/* ─── Shared Utilities ──────────────────────────────────────────── */
+
+.brand-navbar {
+  background: linear-gradient(135deg, var(--navbar-from), var(--navbar-to)) !important;
+  transition: background 0.4s ease;
+}
+
+.brand-btn-primary {
+  background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary)) !important;
+  border: none !important;
+  color: #fff !important;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+.brand-btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.brand-btn-outline {
+  border: 2px solid var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+  background: transparent !important;
+  transition: all 0.2s ease;
+}
+.brand-btn-outline:hover {
+  background: var(--brand-primary) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  border-radius: 1.25rem;
+  transition: background 0.4s ease;
+}
+
+.brand-card {
+  box-shadow: var(--card-shadow) !important;
+  border: none !important;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.brand-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important;
+}
+
+.stat-card {
+  background: var(--stat-gradient) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 1rem !important;
+}
+
+.theme-toggle-btn {
+  background: var(--toggle-bg) !important;
+  border: 1.5px solid rgba(255,255,255,0.35) !important;
+  color: #fff !important;
+  border-radius: 2rem !important;
+  padding: 0.35rem 0.9rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.theme-toggle-btn:hover {
+  background: rgba(255,255,255,0.28) !important;
+  transform: scale(1.04);
+}
+
+.nav-link-active {
+  background: rgba(255,255,255,0.22) !important;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+/* PrimeReact InputText full width */
+.p-inputtext,
+.p-dropdown { width: 100% !important; }
+
+/* page-level min height */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.4s ease;
 }

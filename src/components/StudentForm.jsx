@@ -50,7 +50,7 @@ function StudentForm() {
 
         <div className="col-md-6">
           <label className="form-label fw-semibold">
-            <i className="pi pi-user me-1 text-primary" /> Full Name
+            <i className="pi pi-user me-1" style={{ color: "var(--brand-primary)" }} /> Full Name
           </label>
           <InputText
             name="name"
@@ -64,7 +64,7 @@ function StudentForm() {
 
         <div className="col-md-6">
           <label className="form-label fw-semibold">
-            <i className="pi pi-hashtag me-1 text-primary" /> Age
+            <i className="pi pi-hashtag me-1" style={{ color: "var(--brand-primary)" }} /> Age
           </label>
           <InputText
             name="age"
@@ -79,7 +79,7 @@ function StudentForm() {
 
         <div className="col-md-6">
           <label className="form-label fw-semibold">
-            <i className="pi pi-envelope me-1 text-primary" /> Email
+            <i className="pi pi-envelope me-1" style={{ color: "var(--brand-primary)" }} /> Email
           </label>
           <InputText
             name="email"
@@ -94,7 +94,7 @@ function StudentForm() {
 
         <div className="col-md-6">
           <label className="form-label fw-semibold">
-            <i className="pi pi-book me-1 text-primary" /> Course
+            <i className="pi pi-book me-1" style={{ color: "var(--brand-primary)" }} /> Course
           </label>
           <Dropdown
             value={formData.course}
